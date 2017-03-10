@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\nlibrary(datasets)\n\n# We tweak the \"am\" field to have nicer factor labels. Since this doesn't\n# rely on any user inputs we can do this once at startup and then use the\n# value throughout the lifetime of the application\nmpgData <- mtcars\nmpgData$am <- factor(mpgData$am, labels = c(\"Automatic\", \"Manual\"))\n\n# Define server logic required to plot various variables against mpg\nshinyServer(function(input, output) {\n  \n  # Compute the forumla text in a reactive expression since it is \n  # shared by the output$caption and output$mpgPlot expressions\n  formulaText <- reactive({\n    paste(\"mpg ~\", input$variable)\n  })\n  \n  # Return the formula text for printing as a caption\n  output$caption <- renderText({\n    formulaText()\n  })\n  \n  # Generate a plot of the requested variable against mpg and only \n  # include outliers if requested\n  output$mpgPlot <- renderPlot({\n    boxplot(as.formula(formulaText()), \n            data = mpgData,\n            outline = input$outliers)\n  })\n})",
+    "created" : 1489068634716.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1915090184",
+    "id" : "F9E4D3C6",
+    "lastKnownWriteTime" : 1489069164,
+    "last_content_update" : 1489069164868,
+    "path" : "D:/APAFlow/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
