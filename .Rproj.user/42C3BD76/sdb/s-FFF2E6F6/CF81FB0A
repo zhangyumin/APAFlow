@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shinydashboard)\n\nsidebar <- dashboardSidebar(\n  sidebarMenu(\n    menuItem('预处理', tabName = 'preprocessing', icon = icon('line-chart'),\n        menuSubItem('GFF格式化', tabName = 'parse_gff'),\n        menuSubItem('SAM文件转换为PA坐标', tabName = 'sam2pat'),\n        menuSubItem('去除internal priming', tabName = 'remove_ip'),\n        menuSubItem('聚类PAT', tabName = 'pat2pac'),\n        menuSubItem('统计PAC', tabName = 'stat_pac'),\n        menuSubItem('过滤', tabName = 'filter_pac'),\n        menuSubItem('标准化', tabName = 'normalize_pac'),\n        menuSubItem('PAC诊断', tabName = 'diagnose_pac')\n    ),\n    menuItem('PAS分析', tabName = 'pas_analysis', icon = icon('line-chart'),\n        menuSubItem('提取序列', tabName = 'trim_seq'),\n        menuSubItem('单核苷分布', tabName = 'single_nucleotide'),\n        menuSubItem('联子分析', tabName = 'kcount'),\n        menuSubItem('信号分析', tabName = 'signal_analysis')\n    ),\n    menuItem('PAC分析', tabName = 'pac_analysis', icon = icon('line-chart'),\n        menuSubItem('分类PAC', tabName = 'classify_pac'),\n        menuSubItem('DE PAC', tabName = 'de_pac'),\n        menuSubItem('APA Switching', tabName = 'apa_switching'),\n        menuSubItem('3UTR长度', tabName = '3utr_length')\n    ),\n    menuItem('功能分析', tabName = 'functional_analysis', icon = icon('line-chart'),\n        menuSubItem('go PAC', tabName = 'go_pac')\n    )\n  )\n)\n\nbody <- dashboardBody(\n  tabItems(\n    tabItem(tabName = \"parse_gff\",\n            h2(\"parse_gff\")\n    ),\n    \n    tabItem(tabName = \"trim_seq\",\n            h2(\"trim_seq\")\n    )\n  )\n)\n\ndashboardPage(\n  skin = \"blue\",\n  dashboardHeader(title = \"APAFlow\"),\n  sidebar,\n  body\n)",
+    "created" : 1489068637220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2676059881",
+    "id" : "CF81FB0A",
+    "lastKnownWriteTime" : 1489239457,
+    "last_content_update" : 1489239457926,
+    "path" : "D:/APAFlow/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
