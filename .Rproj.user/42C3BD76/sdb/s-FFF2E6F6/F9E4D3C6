@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "library(shinydashboard)\n\n# Define server logic required to plot various variables against mpg\nfunction(input, output, session) {\n}",
+    "contents" : "library(shinydashboard)\n\nfunction(input, output, session) {\n}",
     "created" : 1489068634716.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2982780258",
+    "hash" : "540339507",
     "id" : "F9E4D3C6",
-    "lastKnownWriteTime" : 1489233398,
-    "last_content_update" : 1489233398380,
+    "lastKnownWriteTime" : 1489318539,
+    "last_content_update" : 1489318539622,
     "path" : "D:/APAFlow/server.R",
     "project_path" : "server.R",
     "properties" : {
