@@ -1,0 +1,115 @@
+{
+    "environment": "1", 
+    "skin": "blue", 
+    "title": "APAFlow", 
+    "menuitem": [
+        {
+          "name": "预处理", 
+          "tabname": "preprossing", 
+          "icon": "random", 
+          "menusubitem": [
+              {
+                "name": "GFF格式化", 
+                "tabname": "parse_gff", 
+                "option": [
+                  {
+                    "id": "file", 
+                    "type": "fileinput", 
+                    "name": "Input file here", 
+                    "multiple": false
+                  }, 
+                  {
+                    "id": "add3utr", 
+                    "type": "numericinput", 
+                    "name": "add3utr", 
+                    "default": 0
+                  }, 
+                  {
+                    "id": "expand3utr", 
+                    "type": "numericinput", 
+                    "name": "expand3utr", 
+                    "default": 0
+                  }, 
+                  {
+                    "id": "pm", 
+                    "type": "numericinput", 
+                    "name": "pm", 
+                    "default": 0
+                  }, 
+                  {
+                    "id": "submit", 
+                    "type": "actionbutton", 
+                    "name": "submit"
+                  }
+                ], 
+                "result": [
+                  {
+                    "id": "text", 
+                    "type": "htmloutput"
+                  }, 
+                  {
+                    "id": "td", 
+                    "type": "htmloutput"
+                  },
+                  {
+                    "id": "plot",
+                    "type": "plotoutput"
+                  }
+                ]
+              }, 
+              {
+                    "name": "SAM文件转换为PA坐标", 
+                    "tabname": "sam2pat", 
+                    "option": [
+                      {
+                        "id": "poly_type",
+                        "type": "selectinput",
+                        "name": "Poly type", 
+                        "choice": {
+                          "A": "A",
+                          "T": "T"
+                        }
+                      },
+                      {
+                        "id": "m", 
+                        "type": "numericinput", 
+                        "name": "m",
+                        "default": 0
+                      }, 
+                      {
+                        "id": "p", 
+                        "type": "numericinput", 
+                        "name": "p", 
+                        "default": 0
+                      }
+                    ], 
+                    "result": [
+                        {
+                            "id": "text", 
+                            "type": "htmloutput"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+          "name": "PAS分析",
+          "tabname": "pas_analysis",
+          "icon": "line-chart",
+          "menusubitem":[
+            {
+              "name": "提取序列",
+              "tabname": "trim_seq",
+              "option": [],
+              "result": []
+            },
+            {
+              "name": "单核苷分布",
+              "tabname": "single_nucleotide",
+              "option": [],
+              "result": []
+            }
+          ]
+        }
+    ]
+}

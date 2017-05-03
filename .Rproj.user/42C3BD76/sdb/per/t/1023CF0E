@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "1\n2\n",
+    "created" : 1493185537485.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1776384097",
+    "id" : "1023CF0E",
+    "lastKnownWriteTime" : 1493188470,
+    "last_content_update" : 1493188473428,
+    "path" : "D:/APAFlow/data.txt",
+    "project_path" : "data.txt",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "{\n    \"environment\": \"1\", \n    \"skin\": \"blue\", \n    \"title\": \"APAFlow\", \n    \"menuitem\": [\n        {\n          \"name\": \"预处理\", \n          \"tabname\": \"preprossing\", \n          \"icon\": \"random\", \n          \"menusubitem\": [\n              {\n                \"name\": \"GFF格式化\", \n                \"tabname\": \"parse_gff\", \n                \"option\": [\n                  {\n                    \"id\": \"file\", \n                    \"type\": \"fileinput\", \n                    \"name\": \"Input file here\", \n                    \"multiple\": false\n                  }, \n                  {\n                    \"id\": \"add3utr\", \n                    \"type\": \"numericinput\", \n                    \"name\": \"add3utr\", \n                    \"default\": 0\n                  }, \n                  {\n                    \"id\": \"expand3utr\", \n                    \"type\": \"numericinput\", \n                    \"name\": \"expand3utr\", \n                    \"default\": 0\n                  }, \n                  {\n                    \"id\": \"pm\", \n                    \"type\": \"numericinput\", \n                    \"name\": \"pm\", \n                    \"default\": 0\n                  }, \n                  {\n                    \"id\": \"submit\", \n                    \"type\": \"actionbutton\", \n                    \"name\": \"submit\"\n                  }\n                ], \n                \"result\": [\n                  {\n                    \"id\": \"text\", \n                    \"type\": \"htmloutput\"\n                  }, \n                  {\n                    \"id\": \"td\", \n                    \"type\": \"htmloutput\"\n                  },\n                  {\n                    \"id\": \"plot\",\n                    \"type\": \"plotoutput\"\n                  }\n                ]\n              }, \n              {\n                    \"name\": \"SAM文件转换为PA坐标\", \n                    \"tabname\": \"sam2pat\", \n                    \"option\": [\n                      {\n                        \"id\": \"poly_type\",\n                        \"type\": \"selectinput\",\n                        \"name\": \"Poly type\", \n                        \"choice\": {\n                          \"A\": \"A\",\n                          \"T\": \"T\"\n                        }\n                      },\n                      {\n                        \"id\": \"m\", \n                        \"type\": \"numericinput\", \n                        \"name\": \"m\",\n                        \"default\": 0\n                      }, \n                      {\n                        \"id\": \"p\", \n                        \"type\": \"numericinput\", \n                        \"name\": \"p\", \n                        \"default\": 0\n                      }\n                    ], \n                    \"result\": [\n                        {\n                            \"id\": \"text\", \n                            \"type\": \"htmloutput\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n          \"name\": \"PAS分析\",\n          \"tabname\": \"pas_analysis\",\n          \"icon\": \"line-chart\",\n          \"menusubitem\":[\n            {\n              \"name\": \"提取序列\",\n              \"tabname\": \"trim_seq\",\n              \"option\": [],\n              \"result\": []\n            },\n            {\n              \"name\": \"单核苷分布\",\n              \"tabname\": \"single_nucleotide\",\n              \"option\": [],\n              \"result\": []\n            }\n          ]\n        }\n    ]\n}",
+    "created" : 1492844043163.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "14|19|19|18|\n20|19|25|18|\n32|19|37|18|\n38|19|42|18|\n49|19|52|18|\n",
+    "hash" : "4259459053",
+    "id" : "67BE0611",
+    "lastKnownWriteTime" : 1493391653,
+    "last_content_update" : 1493391653413,
+    "path" : "D:/APAFlow/config.json",
+    "project_path" : "config.json",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "json"
+}

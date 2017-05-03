@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shinydashboard)\nlibrary(rjson)\n\n# 加载script文件夹内所有R脚本\nlapply(list.files(\"script/\", pattern = \"[.][rR]$\", recursive = TRUE, full.names = TRUE), source)\n\n# 加载配置文件\nconfig<-fromJSON(file=\"config.json\")\n\nfunction(input, output, session) {\n  observeEvent(input$parse_gff_submit, {\n    output$parse_gff_text <- renderText({\n      paste(\"file size is:\", input$parse_gff_file['size'],\"<br>add 3utr is:\", input$parse_gff_add3utr, \"<br>expand 3utr is:\", input$parse_gff_expand3utr, \"<br>pm is:\", input$parse_gff_pm);\n    });\n    a = input$parse_gff_add3utr\n    b = input$parse_gff_expand3utr\n    file = paste0(input$parse_gff_file['datapath'])\n    result = mathops(a, b, file)\n    output$parse_gff_td <- renderText({\n      result\n    })\n    output$parse_gff_plot <- renderPlot({\n      plot(mathops(a, b, file))\n    })\n  })\n}",
+    "created" : 1492935901377.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1974810398",
+    "id" : "E7595234",
+    "lastKnownWriteTime" : 1493389841,
+    "last_content_update" : 1493389841444,
+    "path" : "D:/APAFlow/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

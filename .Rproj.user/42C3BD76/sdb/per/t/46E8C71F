@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shinydashboard)\n\n# 加载script文件夹内所有R脚本\nlapply(list.files(\"script/\", pattern = \"[.][rR]$\", recursive = TRUE, full.names = TRUE), source)\n\nfunction(input, output, session) {\n  observeEvent(input$submit, {\n    output$text <- renderText({\n      paste(\"file size is:\", input$parse_gff_file['size'],\"<br>add 3utr is:\", input$add3utr, \"<br>expand 3utr is:\", input$expand3utr, \"<br>pm is:\", input$pm);\n    });\n    a = input$add3utr\n    b = input$expand3utr\n    output$td <- renderText({\n      mathops(a,b)\n    })\n  })\n}",
+    "created" : 1492935913091.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2712433775",
+    "id" : "46E8C71F",
+    "lastKnownWriteTime" : 1492934572,
+    "last_content_update" : 1492934572,
+    "path" : "D:/APAFlow/oserver.R",
+    "project_path" : "oserver.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

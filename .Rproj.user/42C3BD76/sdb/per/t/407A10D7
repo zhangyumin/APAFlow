@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "mathops <- function(a, b, upload_file) {\n  file_data = read.table(upload_file)\n  line1 = file_data[1, 1]\n  line2 = file_data[2, 1]\n  result = line1 * a + line2 * b\n  write.table(result, file = upload_file,append = TRUE, quote = FALSE, row.names = FALSE, col.names = FALSE)\n  return(result)\n}",
+    "created" : 1493184966376.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2523212331",
+    "id" : "407A10D7",
+    "lastKnownWriteTime" : 1493188482,
+    "last_content_update" : 1493188482511,
+    "path" : "D:/APAFlow/script/mathops.r",
+    "project_path" : "script/mathops.r",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

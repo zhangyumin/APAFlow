@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shinydashboard)\nlibrary(rjson)\n\nconfig<-fromJSON(file=\"config.json\")\n\nitem_detail_index <- 1\nitem_detail_list <- list()\n# 加载sidebar数据信息\nmenu_index <- 1\nmenu_list <- list()\nfor(menu in config$menuitem){\n  submenu_index <- 1\n  submenu_list <- list()\n  for(submenu in menu$menusubitem){\n    # options选项加载\n    option_index <- 1\n    option_list <- list()\n    for(option in submenu$option){\n      if(option$type == \"fileinput\"){\n        option_list[[option_index]] <- fileInput(paste0(submenu$tabname, \"_\", option$id), option$name, multiple = option$multiple, accept = NULL, width = NULL)\n      }else if(option$type == \"numericinput\"){\n        option_list[[option_index]] <- numericInput(paste0(submenu$tabname, \"_\", option$id), option$name, option$default)\n      }else if(option$type == \"actionbutton\"){\n        option_list[[option_index]] <- actionButton(paste0(submenu$tabname, \"_\", option$id), option$name)\n      }else if(option$type == \"selectinput\"){\n        select_choices <- option$choice\n        option_list[[option_index]] <- selectInput(paste0(submenu$tabname, \"_\", option$id), option$name, select_choices)\n      }\n      option_index <- option_index + 1\n    }\n    # results面板加载\n    result_index <- 1\n    result_list <- list()\n    for(result in submenu$result){\n      if(result$type == \"htmloutput\"){\n        result_list[[result_index]] <- htmlOutput(paste0(submenu$tabname, \"_\", result$id))\n      }else if(result$type == \"plotoutput\"){\n        result_list[[result_index]] <- plotOutput(paste0(submenu$tabname, \"_\", result$id))\n      }\n      result_index <- result_index + 1\n    }\n    submenu_list[[submenu_index]] <- menuSubItem(submenu$name, tabName = submenu$tabname)\n    submenu_index <- submenu_index + 1\n    item_detail_list[[item_detail_index]] <- tabItem(tabName = submenu$tabname, fluidRow(box(width = 4, status = \"info\", solidHeader = TRUE, title = \"Options\", option_list), box(width = 8, status = \"info\", solidHeader = TRUE, title = \"Results\", result_list)))\n    item_detail_index <- item_detail_index + 1\n  }\n  menu_list[[menu_index]] <- menuItem(menu$name, tabName = menu$tabname, icon = icon(menu$icon), submenu_list)\n  menu_index <- menu_index + 1\n}\n\n# sidebar初始化\nsidebar <- dashboardSidebar(\n  do.call(sidebarMenu, menu_list)\n)\n\n# body初始化\nbody <- dashboardBody(\n  do.call(tabItems, item_detail_list)\n)\n\n# 整体页面初始化\ndashboardPage(\n  skin = config$skin,\n  dashboardHeader(title = config$title),\n  sidebar,\n  body\n)\n\n",
+    "created" : 1492869781618.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "476601367",
+    "id" : "175D55C9",
+    "lastKnownWriteTime" : 1493189368,
+    "last_content_update" : 1493189368606,
+    "path" : "D:/APAFlow/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "docOutlineVisible" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
